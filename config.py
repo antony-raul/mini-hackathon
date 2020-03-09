@@ -1,5 +1,5 @@
 class Config:
-    SECRET_KEY = 'defina uma key aqui'
+    SECRET_KEY = ''
     MONGODB_SETTINGS = {
-        'host': "mongodb+srv://hackathon:<hackathon>@cluster0-ggstd.mongodb.net/test?retryWrites=true&w=majority",
+        'host': 'mongodb+srv://hackathon:hackathon@hackathon0-v6pub.mongodb.net/test?retryWrites=true&w=majority',
     }
