@@ -8,6 +8,20 @@
   <meta name="author" content="GeeksLabs">
   <meta name="keyword" content="Creative, Dashboard, Admin, Template, Theme, Bootstrap, Responsive, Retina, Minimal">
   <link rel="shortcut icon" href="{{ url_for('static', filename='img/favicon.png' ) }}">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.2.1/css/ol.css" type="text/css">
+  <style>
+    .map {
+      height: 380px;
+      width: auto;
+      
+    }
+    .panel-body-map{
+      height: 380px;
+      width: 40%;
+      
+    }
+  </style>
+  <script src="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.2.1/build/ol.js"></script>
 
   <title>Hackathon</title>
 
@@ -100,7 +114,7 @@
         <div class="row">
           <div class="col-lg-9 col-md-12">
 
-            <div class="panel panel-default">
+            <div class="panel panel-default " >
               <div class="panel-heading">
                 <h2><i class="fa fa-map-marker red"></i><strong>Countries</strong></h2>
                 <div class="panel-actions">
@@ -110,7 +124,22 @@
                 </div>
               </div>
               <div class="panel-body-map">
-                <div id="map" style="height:380px;"></div>
+                <div id="map" class="map">
+                  <script type="text/javascript">
+                    var map = new ol.Map({
+                      target: 'map',
+                      layers: [
+                        new ol.layer.Tile({
+                          source: new ol.source.OSM()
+                        })
+                      ],
+                      view: new ol.View({
+                        center: ol.proj.fromLonLat([37.41, 8.82]),
+                        zoom: 4
+                      })
+                    });
+                  </script>
+                </div>
               </div>
 
             </div>
