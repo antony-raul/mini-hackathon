@@ -23,6 +23,7 @@
   </style>
   <script src="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.2.1/build/ol.js"></script>
 
+
   <title>Hackathon</title>
 
   <!-- Bootstrap CSS -->
@@ -116,7 +117,7 @@
 
             <div class="panel panel-default " >
               <div class="panel-heading">
-                <h2><i class="fa fa-map-marker red"></i><strong>Countries</strong></h2>
+                <h2><i class="fa fa-map-marker red"></i><strong>Mapa</strong></h2>
                 <div class="panel-actions">
                   <a href="index.html#" class="btn-setting"><i class="fa fa-rotate-right"></i></a>
                   <a href="index.html#" class="btn-minimize"><i class="fa fa-chevron-up"></i></a>
@@ -134,8 +135,8 @@
                         })
                       ],
                       view: new ol.View({
-                        center: ol.proj.fromLonLat([-36.-3, -3.-4]),
-                        zoom: 8
+                        center: ol.proj.fromLonLat([-39.0599, -6.6066]),
+                        zoom: 15
                       })
                     });
                   </script>
@@ -195,34 +196,36 @@
 
                   <div class="form quick-post">
                     <!-- Edit profile form (not working)-->
-                    <form class="form-horizontal">
+                    <form class="form-horizontal" method="POST">
                       <!-- Title -->
                       <div class="form-group">
-                        <label class="control-label col-lg-2" for="title">Descrição</label>
+                        <label class="control-label col-lg-2" >Descrição</label>
                         <div class="col-lg-10">
                           <input type="text" class="form-control" id="descricao" name="descricao">
                         </div>
                       </div>
                       <!-- Content -->
                       <div class="form-group">
-                        <label class="control-label col-lg-2" for="content">Data</label>
+                        <label class="control-label col-lg-2" >Data</label>
                         <div class="col-lg-10">
                           <input type="text" class="form-control" id="data" name="data">
                         </div>
                       </div>
-                      <!-- Cateogry -->
+
                       <div class="form-group">
                         <label class="control-label col-lg-2">Crime</label>
                         <div class="col-lg-10">
-                          <select class="form-control">
+                          <select class="form-control" name="crime">
                                                   <option value="">- Escolha -</option>
-                                                  <option value="1">Furto</option>
-                                                  <option value="2">Roubo com arma</option>
-                                                  <option value="3">Drogas</option>
-                                                  <option value="4">Arastão</option>
+                                                  <option value="Furto">Furto</option>
+                                                  <option value="Assalto">Assalto</option>
+                                                  <option value="Drogas">Drogas</option>
+                                                  <option value="Arastão">Arastão</option>
                                                 </select>
                         </div>
                       </div>
+
+
                       <!-- Tags -->
                       <!--<div class="form-group">
                         <label class="control-label col-lg-2" for="tags">Tags</label>
@@ -265,7 +268,7 @@
               <div class="row">
         
                 {% for post in posts %}
-                <div class="col-md-12">
+                <div class="col-md-6">
                   <div class="card mb-4 shadow-sm">
                     <div class="card-body">
                       <p class="card-text">{{ post.descricao }}</p>
@@ -310,16 +313,16 @@
                   <thead>
                     <tr>
                       <th></th>
-                      <th>Country</th>
-                      <th>Users</th>
-                      <th>Online</th>
+                      <th>Bairros</th>
+                      <th>Indice</th>
+                      <th></th>
                       <th>Performance</th>
                     </tr>
                   </thead>
                   <tbody>
                     <tr>
-                      <td><img src="img/Germany.png" style="height:18px; margin-top:-2px;"></td>
-                      <td>Germany</td>
+                      <td></td>
+                      <td>Jardim</td>
                       <td>2563</td>
                       <td>1025</td>
                       <td>
@@ -333,8 +336,8 @@
                       </td>
                     </tr>
                     <tr>
-                      <td><img src="img/India.png" style="height:18px; margin-top:-2px;"></td>
-                      <td>India</td>
+                      <td></td>
+                      <td>Açude Novo</td>
                       <td>3652</td>
                       <td>2563</td>
                       <td>
@@ -348,8 +351,8 @@
                       </td>
                     </tr>
                     <tr>
-                      <td><img src="img/Spain.png" style="height:18px; margin-top:-2px;"></td>
-                      <td>Spain</td>
+                      <td></td>
+                      <td>Açude Velho</td>
                       <td>562</td>
                       <td>452</td>
                       <td>
@@ -363,8 +366,8 @@
                       </td>
                     </tr>
                     <tr>
-                      <td><img src="img/India.png" style="height:18px; margin-top:-2px;"></td>
-                      <td>Russia</td>
+                      <td></td>
+                      <td>Prado</td>
                       <td>1258</td>
                       <td>958</td>
                       <td>
@@ -378,8 +381,8 @@
                       </td>
                     </tr>
                     <tr>
-                      <td><img src="img/Spain.png" style="height:18px; margin-top:-2px;"></td>
-                      <td>USA</td>
+                      <td></td>
+                      <td>Divisão</td>
                       <td>4856</td>
                       <td>3621</td>
                       <td>
@@ -393,8 +396,8 @@
                       </td>
                     </tr>
                     <tr>
-                      <td><img src="img/Germany.png" style="height:18px; margin-top:-2px;"></td>
-                      <td>Brazil</td>
+                      <td></td>
+                      <td>Conjunto Habtacional</td>
                       <td>265</td>
                       <td>102</td>
                       <td>
@@ -408,8 +411,8 @@
                       </td>
                     </tr>
                     <tr>
-                      <td><img src="img/Germany.png" style="height:18px; margin-top:-2px;"></td>
-                      <td>Coloumbia</td>
+                      <td></td>
+                      <td>Pega Avoante</td>
                       <td>265</td>
                       <td>102</td>
                       <td>
@@ -423,8 +426,8 @@
                       </td>
                     </tr>
                     <tr>
-                      <td><img src="img/Germany.png" style="height:18px; margin-top:-2px;"></td>
-                      <td>France</td>
+                      <td></td>
+                      <td>Cedro 1</td>
                       <td>265</td>
                       <td>102</td>
                       <td>

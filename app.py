@@ -22,21 +22,21 @@ def index():
     print(Post.objects)
 
     if request.method == 'POST':
-        hoje = datetime.now()
+
         p = Post(
-            content=request.values['content'],
             descricao=request.values['descricao'],
-            data=hoje.strftime("%d/%m/%Y %H:%M"),
+            data=request.values['data'],
             crime=request.values['crime']
         )
         # Salvei tudo no banco
         p.save()
     # Buscando a lista de post
     posts = Post.objects.all()
+    print(posts)
     return render_template('index.html', titulo="Mini-hackathon", posts=posts)
 
 
-@app.route('/contato/', methods=['GET', 'POST'])
+"""""@app.route('/contato/', methods=['GET', 'POST'])
 def contato():
     form = CrimeForm(csrf_enabled=False)
     if form.validate_on_submit():
@@ -52,7 +52,7 @@ def sobre():
 
 @app.route('/sobre/<nome>/')
 def sobre_autor(nome):
-    return 'Esse artigo foi escrito por %s' % nome
+    return 'Esse artigo foi escrito por %s' % nome"""
 
 
 if __name__ == '__main__':
