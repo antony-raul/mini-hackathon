@@ -1,10 +1,6 @@
-from datetime import datetime
-import json
-from flask_wtf.csrf import CSRFProtect
-from flask import Flask, render_template, url_for, request, redirect
+from flask import Flask, render_template, request
 from flask_mongoengine import MongoEngine
 
-from forms import CrimeForm
 from config import Config
 
 app = Flask(__name__)
